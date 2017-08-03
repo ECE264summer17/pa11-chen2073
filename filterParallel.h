@@ -1,7 +1,8 @@
-#ifndef FILTER_H_
-#define FILTER_H_
+#ifndef FILTER_PARALLEL_H_
+#define FILTER_PARALLEL_H_
 
 #include "bmp.h"
+
 
 typedef struct BoxFilter {
 	int filter[3][3];
@@ -21,5 +22,7 @@ void applyThread(BMPImage * imageIn, BMPImage * imageOut, BoxFilter f, int tid, 
 void * applyThreadWrapper(void * args);
 
 void apply(BMPImage * imageIn, BMPImage * imageOut, BoxFilter f, int numThreads);
+
+Pixel calculate(BMPImage * image, int i, int j, BoxFilter f);
 
 #endif
