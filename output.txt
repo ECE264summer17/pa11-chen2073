@@ -1,0 +1,58 @@
+*****************************************************************************************************
+* [!] Please contact the person who made this commit if you believe there are errors in the result. *
+* [!] In this case, it would be Constantine: croros at purdue dot edu.                              *
+* [!] Do not contact the other TA as they would not be able to help!                                *
+*****************************************************************************************************
+
+[*] Cleaning up...
+
+[*] Compiling...
+gcc -Wall -Wshadow -Werror -g -std=c99 -Wunreachable-code -Wvla -pthread -c pa11_student.c
+gcc -Wall -Wshadow -Werror -g -std=c99 -Wunreachable-code -Wvla -pthread -c filterParallel.c
+gcc -Wall -Wshadow -Werror -g -std=c99 -Wunreachable-code -Wvla -pthread -c bmp.c
+gcc -Wall -Wshadow -Werror -g -std=c99 -Wunreachable-code -Wvla -pthread pa11_student.o filterParallel.o bmp.o -o pa11
+Testing 32 threads...
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+1588/540000 (0.294074 %) pixels different. Passed!
+Verifying threads were executed in parallel...
+31 5 4 16 14 21 24 0 1 6 10 23 11 12 15 19 20 2 7 9 8 13 27 18 26 28 30 29 3 25 17 22
+Passed!
+
+Testing 64 threads...
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+Size of header: 54
+File size: 2160054
+Image width: 600
+Image height: -900
+Color depth: 32
+831/540000 (0.153889 %) pixels different. Passed!
+Verifying threads were executed in parallel...
+4 11 9 0 3 5 7 18 12 10 8 6 21 14 16 19 2 20 1 15 13 17 27 40 31 28 33 32 22 24 23 42 26 37 44 25 39 46 29 53 30 35 34 41 36 38 63 43 50 54 62 52 48 58 60 49 56 59 51 57 47 55 45 61
+Passed!
+
+Testing 64 threads under valgrind...
+[*] There are 0 byte(s) leaked.
+[*] There are 0 error(s) detected by valgrind.
